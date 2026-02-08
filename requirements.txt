@@ -1,0 +1,9 @@
+Flask
+psycopg2cffi
+gunicorn
+psycopg2-binary
+
+
+
+
+
