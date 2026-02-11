@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Flask
 psycopg2-binary
 
@@ -5,3 +6,14 @@ psycopg2-binary
 
 
 
+=======
+Flask
+psycopg2cffi
+gunicorn
+
+
+
+
+
+
+>>>>>>> a1c16142bb68f00d0104c517f326bcd729081870
