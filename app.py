@@ -10,13 +10,21 @@ app = Flask(__name__)
 
 # 資料庫連線設定
 def get_db_connection():
-    return psycopg2.connect(
-        host="localhost",
-        database="ramen_db",
-        user="ramen_user",
-        password="your_password",
-        port="5432"
-    )
+    database_url = os.environ.get("DATABASE_URL")
+
+    if database_url:
+        # Render / Production
+        return psycopg2.connect(database_url, sslmode="require")
+    else:
+        # Local development
+        return psycopg2.connect(
+            host="localhost",
+            database="ramen_db",
+            user="ramen_user",
+            password="ramen123",
+            port="5432"
+        )
+
 
 
 
