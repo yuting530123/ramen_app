@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 拉麵點餐機 Web App
 
 這是一個使用 Python Flask 開發的簡易拉麵點餐系統，
@@ -91,7 +90,3 @@ app.py 會根據 DATABASE_URL 自動連線至正確的資料庫
 本專案已避免將虛擬環境（venv）上傳至 GitHub
 
 專案目的為展示 Flask + PostgreSQL 的基本 Web 開發與部署流程
-=======
-# ramen-ordering-system
-拉麵點餐系統
->>>>>>> a1c16142bb68f00d0104c517f326bcd729081870
