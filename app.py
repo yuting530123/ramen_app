@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "HELLO RAMEN APP"
-    
+    return render_template("index.html")
+
 @app.route("/order", methods=["POST"])
 def order():
     # 口味（單選）
