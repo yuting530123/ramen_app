@@ -11,28 +11,28 @@ def index():
 
 @app.route("/order", methods=["POST"])
 def order():
-    # 口味（單選）
-    flavor_choice = request.form.get("flavor")
+    try:
+        flavor_choice = request.form.get("flavor")
+        topping_choices = request.form.getlist("toppings")
+        topping_choices = [t for t in topping_choices if t]
 
-    # 加料（可複選）
-    topping_choices = request.form.getlist("toppings")
-    topping_choices = [t for t in topping_choices if t]
+        total = calculate_total(flavor_choice, topping_choices)
 
-    # 計算總金額
-    total = calculate_total(flavor_choice, topping_choices)
+        # ⭐ 資料庫存檔
+        db.insert_order(flavor_choice, topping_choices, total)
 
-    # ⭐ 先存進資料庫（一定要在 return 前）
-    db.insert_order(flavor_choice, topping_choices, total)
+        display_toppings = topping_choices if topping_choices else ["無"]
 
-    # 顯示用
-    display_toppings = topping_choices if topping_choices else ["無"]
+        return render_template(
+            "order_success.html",
+            flavor=flavor_choice,
+            toppings=display_toppings,
+            total=total
+        )
+    except Exception as e:
+        # 將錯誤直接印在頁面上，方便 Debug
+        return f"Error: {e}"
 
-    return render_template(
-        "order_success.html",
-        flavor=flavor_choice,
-        toppings=display_toppings,
-        total=total
-    )
 
 if __name__ == "__main__":
     db.create_tables()
