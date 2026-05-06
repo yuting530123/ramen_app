@@ -3,9 +3,32 @@
 這是一個使用 Python Flask 開發的簡易拉麵點餐系統，
 使用者可以透過網頁介面選擇拉麵品項並送出訂單，
 後端會將訂單資料儲存至 PostgreSQL 資料庫。
+<<<<<<< HEAD
 練習後端開發與測試流程，包含單元測試與 API 測試，
 並學習如何透過 mock 技術降低外部依賴。
 
+=======
+
+本專案同時支援：
+
+本機端開發（Local）
+
+Render 雲端部署（Production）
+
+🔧 使用技術
+
+Python 3
+
+Flask
+
+PostgreSQL
+
+HTML / CSS / JavaScript
+
+Render（雲端部署）
+
+Git / GitHub（版本控制）
+>>>>>>> 207d954c6427222bd45563920f1241a32af4404a
 
 📂 專案結構
 ramen-ordering-system/
@@ -73,6 +96,7 @@ app.py 會根據 DATABASE_URL 自動連線至正確的資料庫
 本專案已避免將虛擬環境（venv）上傳至 GitHub
 
 專案目的為展示 Flask + PostgreSQL 的基本 Web 開發與部署流程
+<<<<<<< HEAD
 
 測試說明
 
@@ -82,3 +106,5 @@ app.py 會根據 DATABASE_URL 自動連線至正確的資料庫
   - 模擬使用者發送請求並驗證回應結果
 - Mock 技術
   - 測試時替換資料庫操作，避免依賴外部系統
+=======
+>>>>>>> 207d954c6427222bd45563920f1241a32af4404a

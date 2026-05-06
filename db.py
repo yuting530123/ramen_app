@@ -7,7 +7,11 @@ def get_connection():
     if not DATABASE_URL:
         raise ValueError("DATABASE_URL not set")
     return psycopg2.connect(DATABASE_URL)
+<<<<<<< HEAD
     print("DATABASE_URL:", DATABASE_URL)
+=======
+
+>>>>>>> 207d954c6427222bd45563920f1241a32af4404a
 def create_tables():
     conn = get_connection()
     cursor = conn.cursor()
@@ -25,7 +29,11 @@ def create_tables():
     conn.commit()
     cursor.close()
     conn.close()
+<<<<<<< HEAD
 print("🔥 insert_order 開始")
+=======
+
+>>>>>>> 207d954c6427222bd45563920f1241a32af4404a
 def insert_order(flavor, toppings, total):
     conn = get_connection()
     cursor = conn.cursor()
@@ -38,6 +46,7 @@ def insert_order(flavor, toppings, total):
     conn.commit()
     cursor.close()
     conn.close()
+<<<<<<< HEAD
     print("有存資料")
 
 def get_orders():
@@ -51,3 +60,5 @@ def get_orders():
     conn.close()
 
     return rows
+=======
+>>>>>>> 207d954c6427222bd45563920f1241a32af4404a

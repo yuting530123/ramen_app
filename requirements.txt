@@ -2,7 +2,11 @@ Flask
 psycopg2-binary
 gunicorn
 
+<<<<<<< HEAD
 flask
 pytest
+=======
+
+>>>>>>> 207d954c6427222bd45563920f1241a32af4404a
 
 
