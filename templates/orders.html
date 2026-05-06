@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Orders</title>
+</head>
+<body>
+    <h1>訂單列表</h1>
+
+    <ul>
+        {% for order in orders %}
+            <li>
+                口味：{{ order[0] }} |
+                加料：{{ order[1] }} |
+                金額：{{ order[2] }} |
+                時間：{{ order[3] }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
